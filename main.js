@@ -1,3 +1,4 @@
+import { brokers, brokerPortrait, ratingStars } from "./data/brokers.js";
 import locations from "./data/locations.json";
 import { propertyTypes, ranges, articles } from "./data/catalog.js";
 import { seeds } from "./data/seeds.js";
@@ -827,3 +828,7 @@ document.addEventListener(
   },
   true,
 );
+
+const brokerGrid = $("#brokerGrid");
+brokerGrid.innerHTML = brokers.map(b => `<article class="broker-card"><div class="broker-card-top">${brokerPortrait(b)}<span class="broker-profile-label">HỒ SƠ MINH HỌA</span></div><div class="broker-card-body"><h3>${esc(b.name)}</h3><p class="broker-role">${esc(b.role)}</p><div class="broker-rating">${ratingStars}<strong>5.0<span>/5</span></strong><small>Đánh giá minh họa</small></div><p class="broker-city">⌖ ${esc(b.city)}</p><p class="broker-area">${esc(b.area)}</p><p class="broker-specialty">${esc(b.specialty)}</p><div class="broker-tags">${b.tags.map(tag=>`<span>${esc(tag)}</span>`).join('')}</div><button class="outline broker-profile-button" data-broker="${b.id}">Xem hồ sơ &nbsp; →</button></div></article>`).join('');
+$$('[data-broker]').forEach(button=>button.onclick=()=>{const b=brokers.find(b=>b.id===button.dataset.broker);open(`<div class="broker-modal-top">${brokerPortrait(b)}<div><div class="overline">NHÂN VẬT TỰ TẠO · HỒ SƠ MINH HỌA</div><h2>${esc(b.name)}</h2><p>${esc(b.role)}</p></div></div><div class="broker-rating">${ratingStars}<strong>5.0/5</strong><small>Đánh giá minh họa</small></div><p><strong>Khu vực:</strong> ${esc(b.city)} — ${esc(b.area)}</p><p><strong>Chuyên môn:</strong> ${esc(b.specialty)}</p><p>${esc(b.style)}</p><div class="notice">Đây là nhân vật hư cấu phục vụ bản demo. Chưa có số điện thoại, Zalo hoặc dịch vụ tư vấn thật của nhân vật này.</div><a class="primary" href="#needs" id="brokerNeeds">Xem form nhu cầu chung →</a>`);$('#brokerNeeds').onclick=()=>$('#modal').close()});
