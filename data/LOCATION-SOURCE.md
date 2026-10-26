@@ -1,0 +1,1 @@
+Nguồn: vietnam-provinces@0.0.4 (MIT), https://www.npmjs.com/package/vietnam-provinces. Tập dữ liệu 63 tỉnh/thành và quận/huyện trước sắp xếp năm 2025, dùng làm khu vực tìm kiếm quen thuộc, không đại diện đơn vị hành chính hiện hành.

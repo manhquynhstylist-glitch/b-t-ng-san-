@@ -2,3 +2,8 @@ node_modules/
 dist/
 *.log
 .vercel/
+.vercel
+
+.env
+.env.*
+!.env.example

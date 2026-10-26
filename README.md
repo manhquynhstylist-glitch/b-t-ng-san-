@@ -1,6 +1,6 @@
 # chothue.com.vn
 
-Website tìm thuê mặt bằng và nhà nguyên căn toàn quốc, xây bằng HTML, CSS và JavaScript với Vite.
+Website nhà đất bán và cho thuê trên toàn quốc, giao diện xanh, responsive. HTML/CSS/JavaScript + Vite, Supabase Auth/Postgres/Storage, Vercel Functions.
 
 ## Phát triển
 
@@ -9,26 +9,35 @@ npm ci --cache /workspace/.npm
 npm run dev -- --port 3000
 ```
 
-## Kiểm tra bản dựng
+Để thử kết nối thật ở máy phát triển, sao chép `.env.example` thành `.env.local` rồi nhập thông tin riêng, không commit tệp này. Vite có API middleware cho `/api/config` và `/api/leads`. Khởi động lại máy chủ khi đổi biến.
 
 ```sh
+npm test
 npm run build
-npm run preview -- --port 3000
 ```
 
-Bản demo hỗ trợ tìm kiếm không dấu, lọc khu vực, loại hình, giá và diện tích; sắp xếp; lưu tin; xem chi tiết; đăng tin với ảnh; gửi nhu cầu. Tin đăng, danh sách yêu thích và nhu cầu lưu qua localStorage trên từng trình duyệt. Dữ liệu mẫu và hình ảnh Unsplash dùng để minh họa.
+## Chức năng
 
-## Trước khi vận hành thật
+- Thanh menu Nhà đất bán, Nhà đất cho thuê, Thông tin các tòa nhà, Tin tức, Wiki BĐS; đăng nhập, đăng ký, đăng tin.
+- Sáu loại nhà đất, khoảng giá theo mục đích bán/thuê, diện tích, tỉnh/thành và quận/huyện phụ thuộc nhau; tìm không dấu, sắp xếp, lưu yêu thích trên thiết bị.
+- Địa danh: 63 tỉnh/thành và 705 quận/huyện trước sắp xếp 2025, dùng như khu vực tìm kiếm quen thuộc. Nguồn và giấy phép ở `data/`.
+- Tài khoản email/mật khẩu, xác nhận email và đặt lại mật khẩu qua Supabase.
+- Môi giới quản lý tin của mình: tạo tin với ảnh, sửa tin, bản nháp, công khai, ẩn và xóa. Phân quyền cưỡng chế tại cơ sở dữ liệu.
+- API nhận nhu cầu thật, kiểm tra nội dung và sự đồng ý tư vấn, giới hạn 5 yêu cầu/giờ/IP; chỉ quản trị viên xem và cập nhật nhu cầu. Chưa gửi thông báo email/Zalo tự động.
+- Bài kiến thức do website cung cấp; danh bạ từng tòa nhà chưa có dữ liệu đã xác minh. Tin minh họa được gắn nhãn và có thể tắt; không nhập tự động dữ liệu demo cũ vào hệ thống thật.
 
-Cần triển khai API và cơ sở dữ liệu, tài khoản môi giới và phân quyền, duyệt tin, lưu ảnh, xử lý nhu cầu và chính sách dữ liệu cá nhân. Cấu hình số điện thoại và tài khoản Zalo thật trước khi kích hoạt liên hệ. Website hiện không gửi dữ liệu và không công khai tin lên máy chủ. Chưa triển khai lên tên miền chothue.com.vn.
+## Kích hoạt dữ liệu thật
 
-## Triển khai Vercel
+Làm theo [supabase/SETUP.md](supabase/SETUP.md), chạy [supabase/schema.sql](supabase/schema.sql), thêm ba biến vào Vercel, thiết lập email và cấp quyền quản trị. Khi chưa cấu hình, đăng ký/đăng nhập không giả lập tài khoản, form thông báo rõ chưa gửi dữ liệu. Không lưu nhu cầu mới vào localStorage.
 
-Cấu hình sẵn trong `vercel.json`: framework Vite, cài bằng `npm ci`, build bằng `npm run build`, xuất thư mục `dist`.
+## Triển khai
 
-1. Đăng nhập Vercel và chọn Add New → Project.
-2. Import kho GitHub `manhquynhstylist-glitch/b-t-ng-san-` (cấp quyền cho Vercel nếu được yêu cầu).
-3. Chọn nhánh `main`, Root Directory để mặc định, rồi Deploy. Không cần biến môi trường cho bản demo.
-4. Sau khi triển khai thành công, vào Settings → Domains để thêm `chothue.com.vn`; cấu hình DNS theo hướng dẫn Vercel cung cấp.
+`vercel.json` cài bằng `npm ci`, chạy `npm run build`, xuất `dist`; Vercel tự nhận các Functions trong `api/`.
 
-Nếu dùng CLI, chạy `vercel login`, sau đó `vercel link` và `vercel --prod` tại thư mục dự án. Không đưa token vào Git hoặc chat. Việc triển khai không bổ sung máy chủ xử lý nhu cầu hay tài khoản môi giới.
+```sh
+vercel login
+vercel link
+vercel deploy --prod
+```
+
+Dự án Vercel hiện tại `b-t-ng-san-`, URL `https://b-t-ng-san.vercel.app`. Việc tự deploy từ GitHub cần cấp quyền kho mã cho Vercel. Tên miền `chothue.com.vn`, số tổng đài và Zalo doanh nghiệp chưa cấu hình.

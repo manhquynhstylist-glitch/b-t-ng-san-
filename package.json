@@ -1,1 +1,19 @@
-{"name":"chothue-com-vn","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"vite --host 0.0.0.0","build":"vite build","preview":"vite preview --host 0.0.0.0"},"devDependencies":{"vite":"^6.4.1"}}
+{
+  "name": "chothue-com-vn",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.js"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.11",
+    "vite": "^6.4.1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0"
+  }
+}

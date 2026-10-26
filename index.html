@@ -1,11 +1,376 @@
-<!doctype html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1877f2"><meta name="description" content="Tìm thuê mặt bằng kinh doanh và nhà nguyên căn trên toàn quốc cùng chothue.com.vn."><title>chothue.com.vn — Không gian tốt, khởi đầu mới</title><link rel="stylesheet" href="/style.css"></head><body>
-<header><div class="container nav"><a class="brand" href="#">⌂ <span>chothue<span class="domain">.com.vn</span><small>KẾT NỐI KHÔNG GIAN, MỞ LỐI THÀNH CÔNG</small></span></a><nav aria-label="Điều hướng chính"><a class="active" href="#listings">Tìm bất động sản</a><a href="#locations">Khu vực nổi bật</a><a href="#expert">Chuyên gia</a></nav><div class="nav-actions"><button class="saved-link" id="showSaved">♡ <span>Tin đã lưu</span> <b id="savedCount">0</b></button><button class="primary" id="postBtn">＋ Đăng tin miễn phí</button></div></div></header>
-<main><section class="hero"><div class="hero-shade"></div><div class="container hero-content"><div class="eyebrow"><span></span> KHÔNG GIAN PHÙ HỢP. CƠ HỘI RỘNG MỞ.</div><h1>Tìm không gian lý tưởng.<br>Khởi đầu hành trình mới.</h1><p>Mặt bằng kinh doanh & nhà nguyên căn trên toàn quốc.</p><div class="search-box"><div class="search-tabs"><button class="selected" data-kind="">Tất cả cho thuê</button><button data-kind="Mặt bằng">Mặt bằng kinh doanh</button><button data-kind="Nhà nguyên căn">Nhà nguyên căn</button></div><form id="searchForm"><label class="keyword"><span>⌕</span><input id="keyword" aria-label="Tìm địa điểm hoặc từ khóa" placeholder="Bạn muốn thuê ở đâu? Nhập khu vực, đường phố..."></label><label class="search-city"><span>Khu vực</span><select id="city"><option value="">Toàn quốc</option><option>TP. Hồ Chí Minh</option><option>Hà Nội</option><option>Đà Nẵng</option><option>Cần Thơ</option></select></label><button class="primary" type="submit">⌕ &nbsp; Tìm kiếm</button></form><div class="quick"><span>Tìm kiếm phổ biến:</span><button data-query="Quận 1">Quận 1</button><button data-query="Thủ Đức">Thủ Đức</button><button data-query="Cầu Giấy">Cầu Giấy</button><button data-query="Hải Châu">Hải Châu</button></div></div><div class="hero-proof"><span>✓ &nbsp;Thông tin minh bạch</span><span>✓ &nbsp;Kết nối trực tiếp môi giới</span><span>✓ &nbsp;Đồng hành tìm không gian phù hợp</span></div></div><div class="image-credit">Không gian cho những khởi đầu mới</div></section>
-<section class="container categories"><button data-category="Mặt bằng"><span class="category-icon">▥</span><span><strong>Mặt bằng kinh doanh</strong><small>Mở lối kinh doanh thành công</small></span><b>↗</b></button><button data-category="Nhà nguyên căn"><span class="category-icon">⌂</span><span><strong>Nhà nguyên căn</strong><small>An cư, kết hợp kinh doanh</small></span><b>↗</b></button><a href="#needs"><span class="category-icon">⌕</span><span><strong>Tìm theo nhu cầu</strong><small>Để chuyên gia tìm giúp bạn</small></span><b>↗</b></a></section>
-<section class="container listing-section" id="listings"><div class="section-head"><div><div class="overline">KHÔNG GIAN ĐANG CHỜ BẠN</div><h2>Bất động sản cho thuê nổi bật<span class="blue-dot">.</span></h2><p>Khám phá những lựa chọn phù hợp cho cuộc sống và kinh doanh.</p></div><a href="#listings" id="allListings">Xem tất cả &nbsp; →</a></div><div class="filter-row"><div class="filter-buttons"><select id="typeFilter" aria-label="Loại bất động sản"><option value="">Tất cả loại hình</option>Mặt bằng</option><option>Nhà nguyên căn</option></select><select id="priceFilter" aria-label="Mức giá"><option value="">Mức giá</option><option value="20">Dưới 20 triệu/tháng</option><option value="40">20–40 triệu/tháng</option><option value="100">Trên 40 triệu/tháng</option></select><select id="areaFilter" aria-label="Diện tích"><option value="">Diện tích</option><option value="100">Dưới 100 m²</option><option value="200">Từ 100 m²</option></select><button id="resetFilters">↻ Đặt lại</button></div><label class="sort-label">Sắp xếp: <select id="sort"><option value="new">Mới nhất</option><option value="low">Giá thấp đến cao</option><option value="high">Giá cao đến thấp</option></select></label></div><div class="result-line"><span id="resultCount"></span><span class="demo-label">Dữ liệu minh họa</span></div><div class="property-grid" id="grid"></div><button class="outline more" id="moreBtn">Xem thêm bất động sản &nbsp; ↓</button></section>
-<section class="locations-section" id="locations"><div class="container"><div class="section-head"><div><div class="overline">ĐIỂM ĐẾN TIỀM NĂNG</div><h2>Bạn muốn thuê ở đâu?</h2><p>Mỗi thành phố, một cơ hội mới.</p></div><span class="location-note">Kết nối không gian trên toàn quốc ↗</span></div><div class="location-grid" id="locationGrid"></div></div></section>
-<section class="container expert" id="expert"><div class="expert-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85" alt="Ảnh minh họa chuyên gia tư vấn bất động sản"><div class="photo-label">ĐỒNG HÀNH CÙNG BẠN<br><strong>Từ tìm kiếm đến ký hợp đồng</strong></div></div><div class="expert-copy"><div class="overline">KHÔNG CHỈ LÀ MỘT NƠI ĐỂ THUÊ</div><h2>Một chuyên gia đồng hành.<br>Ngàn lựa chọn phù hợp.</h2><p>Tìm mặt bằng đẹp là bước đầu. Tìm đúng không gian cho kế hoạch của bạn mới là điều quan trọng. Chúng tôi giúp bạn kết nối với môi giới tại khu vực và đưa ra lựa chọn tự tin hơn.</p><div class="expert-benefit"><span>✓</span><div><strong>Am hiểu thị trường địa phương</strong><p>Tư vấn vị trí, ngân sách và tiềm năng kinh doanh.</p></div></div><div class="expert-benefit"><span>✓</span><div><strong>Đồng hành trong từng bước</strong><p>Hỗ trợ xem nhà, trao đổi điều kiện và thủ tục thuê.</p></div></div><a class="primary" href="#needs">Kết nối chuyên gia &nbsp; →</a><small>Thông tin đội ngũ sẽ được cập nhật khi website chính thức hoạt động.</small></div></section>
-<section class="container needs" id="needs"><div><div class="overline">CHIA SẺ NHU CẦU, NHẬN GỢI Ý PHÙ HỢP</div><h2>Không gian bạn cần,<br>để chúng tôi tìm giúp.</h2><p>Cho chúng tôi biết điều bạn đang tìm kiếm.<br>Chuyên gia sẽ đồng hành cùng kế hoạch của bạn.</p><div class="needs-note">✓ Miễn phí tư vấn &nbsp; ✓ Bảo mật thông tin</div></div><form id="needsForm"><div class="form-row"><label>Họ và tên<input required name="name" autocomplete="name" placeholder="Nhập họ và tên của bạn" maxlength="80"></label><label>Số điện thoại<input required name="phone" autocomplete="tel" type="tel" pattern="[+]?[0-9 ]{9,15}" placeholder="Nhập số điện thoại"></label></div><label>Nhu cầu của bạn<textarea required name="need" rows="3" placeholder="Ví dụ: Tôi cần thuê mặt bằng kinh doanh café tại Quận 1, ngân sách 20–30 triệu/tháng..." maxlength="2000"></textarea></label><label class="consent"><input required type="checkbox"> Tôi đồng ý để chothue.com.vn sử dụng thông tin này để tư vấn.</label><button class="primary" type="submit">Gửi nhu cầu tư vấn &nbsp; →</button><small>Bản demo: thông tin chỉ được lưu trên trình duyệt này, chưa gửi đến môi giới.</small><p role="status" id="leadStatus"></p></form></section>
-<section class="container broker-banner"><div><h2>Bạn là chủ nhà hoặc môi giới?</h2><p>Kết nối bất động sản của bạn với những người đang tìm kiếm.</p></div><button class="primary" id="postBottom">Đăng tin cho thuê miễn phí &nbsp; →</button></section></main>
-<footer><div class="container footer-grid"><div><a class="brand" href="#">⌂ <span>chothue<span class="domain">.com.vn</span></span></a><p>Kết nối không gian, mở lối thành công.<br>Nền tảng tìm thuê mặt bằng & nhà nguyên căn toàn quốc.</p></div><div><strong>Khám phá</strong><a href="#listings">Bất động sản cho thuê</a><a href="#locations">Khu vực nổi bật</a></div><div><strong>Đồng hành cùng bạn</strong><a href="#expert">Chuyên gia tư vấn</a><a href="#needs">Gửi nhu cầu tìm thuê</a></div><div><strong>Liên hệ</strong><button class="text-btn" data-contact="Gọi điện">Gọi tư vấn ↗</button><button class="text-btn" data-contact="Zalo">Kết nối Zalo ↗</button></div></div><div class="container copyright"><span>© 2026 chothue.com.vn. Bản thiết kế thử nghiệm.</span><span>Thông tin và hình ảnh bất động sản chỉ mang tính minh họa.</span></div></footer><div class="floating-contact"><button data-contact="Zalo" aria-label="Liên hệ Zalo">Zalo</button><button data-contact="Gọi điện" aria-label="Gọi tư vấn">☎</button></div>
-<dialog id="modal"><button id="closeModal" class="close" aria-label="Đóng">×</button><div id="modalContent"></div></dialog><div id="toast" role="status"></div><script type="module" src="/main.js"></script></body></html>
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#1877f2" />
+    <meta
+      name="description"
+      content="Tìm thuê mặt bằng kinh doanh và nhà nguyên căn trên toàn quốc cùng chothue.com.vn."
+    />
+    <title>chothue.com.vn — Không gian tốt, khởi đầu mới</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#"
+          >⌂
+          <span
+            >chothue<span class="domain">.com.vn</span
+            ><small>KẾT NỐI KHÔNG GIAN, MỞ LỐI THÀNH CÔNG</small></span
+          ></a
+        >
+        <nav aria-label="Điều hướng chính">
+          <button data-purpose="sale">Nhà đất bán</button
+          ><button class="active" data-purpose="rent">Nhà đất cho thuê</button
+          ><a href="#buildings">Thông tin các tòa nhà</a
+          ><a href="#news">Tin tức</a><a href="#wiki">Wiki BĐS</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="saved-link" id="showSaved">
+            ♡ <span>Tin đã lưu</span> <b id="savedCount">0</b>
+          </button>
+          <div class="auth-links">
+            <button id="loginBtn">Đăng nhập</button><span>/</span
+            ><button id="registerBtn">Đăng ký</button>
+          </div>
+          <button id="accountBtn" hidden>Tài khoản</button
+          ><button class="primary" id="postBtn">＋ Đăng tin</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="serviceBanner" class="service-banner" role="status" hidden></div>
+      <section class="hero">
+        <div class="hero-shade"></div>
+        <div class="container hero-content">
+          <div class="eyebrow">
+            <span></span> KHÔNG GIAN PHÙ HỢP. CƠ HỘI RỘNG MỞ.
+          </div>
+          <h1>Tìm không gian lý tưởng.<br />Khởi đầu hành trình mới.</h1>
+          <p>Mặt bằng kinh doanh & nhà nguyên căn trên toàn quốc.</p>
+          <div class="search-box">
+            <div class="search-tabs">
+              <button class="selected" data-kind="">Tất cả cho thuê</button
+              ><button data-kind="Mặt bằng">Mặt bằng kinh doanh</button
+              ><button data-kind="Nhà riêng">Nhà nguyên căn</button>
+            </div>
+            <form id="searchForm">
+              <label class="keyword"
+                ><span>⌕</span
+                ><input
+                  id="keyword"
+                  maxlength="180"
+                  aria-label="Tìm địa điểm hoặc từ khóa"
+                  placeholder="Bạn muốn thuê ở đâu? Nhập khu vực, đường phố..." /></label
+              ><label class="search-city"
+                ><span>Khu vực</span
+                ><select id="city">
+                  <option value="">Toàn quốc</option>
+                </select></label
+              ><button class="primary" type="submit">⌕ &nbsp; Tìm kiếm</button>
+            </form>
+            <div class="quick">
+              <span>Tìm kiếm phổ biến:</span
+              ><button data-query="Quận 1">Quận 1</button
+              ><button data-query="Thủ Đức">Thủ Đức</button
+              ><button data-query="Cầu Giấy">Cầu Giấy</button
+              ><button data-query="Hải Châu">Hải Châu</button>
+            </div>
+          </div>
+          <div class="hero-proof">
+            <span>✓ &nbsp;Thông tin minh bạch</span
+            ><span>✓ &nbsp;Kết nối trực tiếp môi giới</span
+            ><span>✓ &nbsp;Đồng hành tìm không gian phù hợp</span>
+          </div>
+        </div>
+        <div class="image-credit">Không gian cho những khởi đầu mới</div>
+      </section>
+      <section class="container categories">
+        <button data-category="Mặt bằng">
+          <span class="category-icon">▥</span
+          ><span
+            ><strong>Mặt bằng kinh doanh</strong
+            ><small>Mở lối kinh doanh thành công</small></span
+          ><b aria-hidden="true">→</b></button
+        ><button data-category="Nhà riêng">
+          <span class="category-icon">⌂</span
+          ><span
+            ><strong>Nhà nguyên căn</strong
+            ><small>An cư, kết hợp kinh doanh</small></span
+          ><b aria-hidden="true">→</b></button
+        ><a href="#needs"
+          ><span class="category-icon">⌕</span
+          ><span
+            ><strong>Tìm theo nhu cầu</strong
+            ><small>Để chuyên gia tìm giúp bạn</small></span
+          ><b aria-hidden="true">→</b></a
+        >
+      </section>
+      <section class="container listing-section" id="listings">
+        <div class="section-head">
+          <div>
+            <div class="overline">KHÔNG GIAN ĐANG CHỜ BẠN</div>
+            <h2 id="listingsTitle">
+              Bất động sản cho thuê nổi bật<span class="blue-dot">.</span>
+            </h2>
+            <p>Khám phá những lựa chọn phù hợp cho cuộc sống và kinh doanh.</p>
+          </div>
+          <a href="#listings" id="allListings">Xem tất cả &nbsp; →</a>
+        </div>
+        <div class="filter-row">
+          <div class="filter-buttons">
+            <select id="typeFilter" aria-label="Loại bất động sản"></select
+            ><select
+              id="districtFilter"
+              aria-label="Quận huyện hoặc khu vực"
+              disabled
+            >
+              <option value="">Tất cả quận / huyện</option></select
+            ><select id="priceFilter" aria-label="Khoảng giá"></select
+            ><select id="areaFilter" aria-label="Diện tích">
+              <option value="">Diện tích</option>
+              <option value="100">Dưới 100 m²</option>
+              <option value="200">Từ 100 m²</option></select
+            ><button id="resetFilters">↻ Đặt lại</button>
+          </div>
+          <label class="sort-label"
+            >Sắp xếp:
+            <select id="sort">
+              <option value="new">Mới nhất</option>
+              <option value="low">Giá thấp đến cao</option>
+              <option value="high">Giá cao đến thấp</option>
+            </select></label
+          >
+        </div>
+        <p class="geo-note">
+          Địa điểm dùng tên tỉnh/thành, quận/huyện quen thuộc trước sắp xếp năm
+          2025 để thuận tiện tìm kiếm.
+        </p>
+        <div class="result-line">
+          <span id="resultCount" aria-live="polite"></span
+          ><label class="demo-label"
+            ><input id="showDemo" type="checkbox" checked /> Hiển thị thêm tin
+            minh họa</label
+          >
+        </div>
+        <div class="property-grid" id="grid"></div>
+        <button class="outline more" id="moreBtn">
+          Xem thêm bất động sản &nbsp; ↓
+        </button>
+      </section>
+      <section class="locations-section" id="locations">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="overline">ĐIỂM ĐẾN TIỀM NĂNG</div>
+              <h2>Bạn muốn thuê ở đâu?</h2>
+              <p>Mỗi thành phố, một cơ hội mới.</p>
+            </div>
+            <span class="location-note"
+              >Kết nối không gian trên toàn quốc ↗</span
+            >
+          </div>
+          <div class="location-grid" id="locationGrid"></div>
+        </div>
+      </section>
+      <section class="container editorial" id="buildings">
+        <div class="overline">KHÁM PHÁ KHÔNG GIAN</div>
+        <h2>Thông tin các tòa nhà</h2>
+        <p>Tìm hiểu loại hình và kết nối tư vấn về tòa nhà phù hợp.</p>
+        <div class="editorial-grid">
+          <article>
+            <span class="editorial-icon">▥</span>
+            <h3>Tòa nhà văn phòng</h3>
+            <p>
+              So sánh vị trí, diện tích thuê, phí dịch vụ và tiện ích vận hành.
+            </p>
+            <a href="#needs">Yêu cầu thông tin tòa nhà →</a>
+          </article>
+          <article>
+            <span class="editorial-icon">▤</span>
+            <h3>Tòa nhà căn hộ</h3>
+            <p>Tìm căn hộ chung cư, căn hộ dịch vụ phù hợp nhu cầu lưu trú.</p>
+            <button data-building-type="Căn hộ chung cư">
+              Tìm căn hộ cho thuê →
+            </button>
+          </article>
+          <article>
+            <span class="editorial-icon">⌂</span>
+            <h3>Nhà phố thương mại</h3>
+            <p>Khám phá không gian kết hợp kinh doanh và sinh hoạt độc lập.</p>
+            <button data-building-type="Nhà mặt phố">Tìm nhà mặt phố →</button>
+          </article>
+        </div>
+        <p class="geo-note">
+          Danh bạ từng tòa nhà sẽ được cập nhật sau khi thông tin được xác minh.
+        </p>
+      </section>
+      <section class="container editorial" id="news">
+        <div class="overline">GÓC NHÌN & KINH NGHIỆM</div>
+        <h2>Tin tức & kinh nghiệm tìm nhà</h2>
+        <div class="editorial-grid" id="newsGrid"></div>
+      </section>
+      <section class="container editorial" id="wiki">
+        <div class="overline">KIẾN THỨC CHO MỌI GIAO DỊCH</div>
+        <h2>Wiki BĐS</h2>
+        <div class="editorial-grid" id="wikiGrid"></div>
+      </section>
+      <section class="container expert" id="expert">
+        <div class="expert-photo">
+          <img
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85"
+            alt="Ảnh minh họa chuyên gia tư vấn bất động sản"
+          />
+          <div class="photo-label">
+            ĐỒNG HÀNH CÙNG BẠN<br /><strong>Từ tìm kiếm đến ký hợp đồng</strong>
+          </div>
+        </div>
+        <div class="expert-copy">
+          <div class="overline">KHÔNG CHỈ LÀ MỘT NƠI ĐỂ THUÊ</div>
+          <h2>Một chuyên gia đồng hành.<br />Ngàn lựa chọn phù hợp.</h2>
+          <p>
+            Tìm mặt bằng đẹp là bước đầu. Tìm đúng không gian cho kế hoạch của
+            bạn mới là điều quan trọng. Chúng tôi giúp bạn kết nối với môi giới
+            tại khu vực và đưa ra lựa chọn tự tin hơn.
+          </p>
+          <div class="expert-benefit">
+            <span>✓</span>
+            <div>
+              <strong>Am hiểu thị trường địa phương</strong>
+              <p>Tư vấn vị trí, ngân sách và tiềm năng kinh doanh.</p>
+            </div>
+          </div>
+          <div class="expert-benefit">
+            <span>✓</span>
+            <div>
+              <strong>Đồng hành trong từng bước</strong>
+              <p>Hỗ trợ xem nhà, trao đổi điều kiện và thủ tục thuê.</p>
+            </div>
+          </div>
+          <a class="primary" href="#needs">Kết nối chuyên gia &nbsp; →</a
+          ><small
+            >Thông tin đội ngũ sẽ được cập nhật khi website chính thức hoạt
+            động.</small
+          >
+        </div>
+      </section>
+      <section class="container needs" id="needs">
+        <div>
+          <div class="overline">CHIA SẺ NHU CẦU, NHẬN GỢI Ý PHÙ HỢP</div>
+          <h2>Không gian bạn cần,<br />để chúng tôi tìm giúp.</h2>
+          <p>
+            Cho chúng tôi biết điều bạn đang tìm kiếm.<br />Chuyên gia sẽ đồng
+            hành cùng kế hoạch của bạn.
+          </p>
+          <div class="needs-note">
+            ✓ Miễn phí tư vấn &nbsp; ✓ Bảo mật thông tin
+          </div>
+        </div>
+        <form id="needsForm">
+          <div class="form-row">
+            <label
+              >Họ và tên<input
+                required
+                name="name"
+                minlength="2"
+                autocomplete="name"
+                placeholder="Nhập họ và tên của bạn"
+                maxlength="80" /></label
+            ><label
+              >Số điện thoại<input
+                required
+                name="phone"
+                autocomplete="tel"
+                type="tel"
+                pattern="[+]?[0-9 ]{9,15}"
+                placeholder="Nhập số điện thoại"
+            /></label>
+          </div>
+          <label
+            >Nhu cầu của bạn<textarea
+              required
+              name="need"
+              minlength="10"
+              rows="3"
+              placeholder="Ví dụ: Tôi cần thuê mặt bằng kinh doanh café tại Quận 1, ngân sách 20–30 triệu/tháng..."
+              maxlength="2000"
+            ></textarea></label
+          ><label class="trap" aria-hidden="true"
+            >Để trống ô này<input
+              name="website"
+              tabindex="-1"
+              autocomplete="off" /></label
+          ><label class="consent"
+            ><input name="consent" required type="checkbox" /> Tôi đồng ý để
+            chothue.com.vn sử dụng thông tin này để tư vấn.</label
+          ><button class="primary" type="submit">
+            Gửi nhu cầu tư vấn &nbsp; →</button
+          ><small
+            ><span id="leadHint">Đang kiểm tra kết nối nhận nhu cầu…</span>
+            <button type="button" class="privacy-link" id="privacyBtn">
+              Quyền riêng tư
+            </button></small
+          >
+          <p role="status" id="leadStatus"></p>
+        </form>
+      </section>
+      <section class="container broker-banner">
+        <div>
+          <h2>Bạn là chủ nhà hoặc môi giới?</h2>
+          <p>Kết nối bất động sản của bạn với những người đang tìm kiếm.</p>
+        </div>
+        <button class="primary" id="postBottom">
+          Đăng tin cho thuê miễn phí &nbsp; →
+        </button>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#"
+            >⌂ <span>chothue<span class="domain">.com.vn</span></span></a
+          >
+          <p>
+            Kết nối không gian, mở lối thành công.<br />Nền tảng tìm thuê mặt
+            bằng & nhà nguyên căn toàn quốc.
+          </p>
+        </div>
+        <div>
+          <strong>Khám phá</strong><a href="#listings">Bất động sản cho thuê</a
+          ><a href="#locations">Khu vực nổi bật</a>
+        </div>
+        <div>
+          <strong>Đồng hành cùng bạn</strong
+          ><a href="#expert">Chuyên gia tư vấn</a
+          ><a href="#needs">Gửi nhu cầu tìm thuê</a>
+        </div>
+        <div>
+          <strong>Liên hệ</strong
+          ><button class="text-btn" data-contact="Gọi điện">
+            Gọi tư vấn ↗</button
+          ><button class="text-btn" data-contact="Zalo">Kết nối Zalo ↗</button>
+        </div>
+      </div>
+      <div class="container copyright">
+        <span>© 2026 chothue.com.vn.</span
+        ><span
+          >Tin minh họa được gắn nhãn riêng. Vui lòng xác minh trước giao
+          dịch.</span
+        >
+      </div>
+    </footer>
+    <div class="floating-contact">
+      <button data-contact="Zalo" aria-label="Liên hệ Zalo">Zalo</button
+      ><button data-contact="Gọi điện" aria-label="Gọi tư vấn">☎</button>
+    </div>
+    <dialog id="modal">
+      <button id="closeModal" class="close" aria-label="Đóng">×</button>
+      <div id="modalContent"></div>
+    </dialog>
+    <div id="toast" role="status"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
