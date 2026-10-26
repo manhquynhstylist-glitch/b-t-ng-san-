@@ -19,7 +19,7 @@ npm run build
 ## Chức năng
 
 - Thanh menu Nhà đất bán, Nhà đất cho thuê, Thông tin các tòa nhà, Tin tức, Wiki BĐS; đăng nhập, đăng ký, đăng tin.
-- Sáu loại nhà đất, khoảng giá theo mục đích bán/thuê, diện tích, tỉnh/thành và quận/huyện phụ thuộc nhau; tìm không dấu, sắp xếp, lưu yêu thích trên thiết bị.
+- Tám loại nhà đất, khoảng giá theo mục đích bán/thuê, diện tích, tỉnh/thành và quận/huyện phụ thuộc nhau; tìm không dấu, sắp xếp, lưu yêu thích trên thiết bị.
 - Địa danh: 63 tỉnh/thành và 705 quận/huyện trước sắp xếp 2025, dùng như khu vực tìm kiếm quen thuộc. Nguồn và giấy phép ở `data/`.
 - Tài khoản email/mật khẩu, xác nhận email và đặt lại mật khẩu qua Supabase.
 - Môi giới quản lý tin của mình: tạo tin với ảnh, sửa tin, bản nháp, công khai, ẩn và xóa. Phân quyền cưỡng chế tại cơ sở dữ liệu.

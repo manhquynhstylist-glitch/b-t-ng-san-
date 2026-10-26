@@ -4,7 +4,7 @@ export const seeds = [
   {
     id: 1,
     title: "Mặt bằng góc 2 mặt tiền, trung tâm Quận 1",
-    type: "Mặt bằng",
+    type: "Mặt bằng kinh doanh",
     city: "TP. Hồ Chí Minh",
     address: "Đường Nguyễn Thái Bình, Quận 1",
     price: 35,
@@ -30,7 +30,7 @@ export const seeds = [
   {
     id: 3,
     title: "Mặt bằng kinh doanh vị trí đẹp tại Cầu Giấy",
-    type: "Mặt bằng",
+    type: "Mặt bằng kinh doanh",
     city: "Hà Nội",
     address: "Đường Trần Thái Tông, Cầu Giấy",
     price: 22,
@@ -56,7 +56,7 @@ export const seeds = [
   {
     id: 5,
     title: "Không gian café sân vườn, khu dân cư sầm uất",
-    type: "Mặt bằng",
+    type: "Mặt bằng kinh doanh",
     city: "TP. Hồ Chí Minh",
     address: "Đường Phan Văn Trị, Gò Vấp",
     price: 32,
@@ -82,7 +82,7 @@ export const seeds = [
   {
     id: 7,
     title: "Mặt bằng showroom rộng rãi tại Ninh Kiều",
-    type: "Mặt bằng",
+    type: "Mặt bằng kinh doanh",
     city: "Cần Thơ",
     address: "Đường 30 Tháng 4, Ninh Kiều",
     price: 45,

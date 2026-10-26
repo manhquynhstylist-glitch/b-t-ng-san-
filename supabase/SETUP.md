@@ -64,3 +64,7 @@ Không cấp quyền admin cho mọi môi giới. Mở **Quản lý tin → Nhu 
 6. Tài khoản môi giới khác không được xem nhu cầu. Sau 5 yêu cầu cùng IP trong giờ, API trả 429.
 
 Bộ kiểm tra `npm test` xác minh chính sách dữ liệu bằng PostgreSQL chạy trong PGlite và các phản hồi API; không thay thế kiểm tra trên dự án Supabase thật. Chủ website cần bổ sung pháp nhân, thông tin liên hệ hỗ trợ, quy định lưu trữ/xóa dữ liệu và chính sách nội dung phù hợp trước khi vận hành rộng rãi. Tin do môi giới đăng không mặc nhiên là đã được đơn vị vận hành xác minh.
+
+## Cập nhật danh mục kinh doanh
+
+Nếu đã chạy schema phiên bản trước, chạy `supabase/migrations/20261026_property_categories.sql` trong SQL Editor để đổi tên Mặt bằng thành Mặt bằng kinh doanh và cho phép hai loại mới: Sang nhượng cửa hàng kinh doanh, Mặt bằng văn phòng. Tin cũ được giữ lại. Dự án mới chỉ cần chạy schema.sql hiện tại.

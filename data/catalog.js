@@ -1,5 +1,7 @@
 export const propertyTypes = [
-  "Mặt bằng",
+  "Mặt bằng kinh doanh",
+  "Sang nhượng cửa hàng kinh doanh",
+  "Mặt bằng văn phòng",
   "Căn hộ chung cư",
   "Chung cư mini, căn hộ dịch vụ",
   "Nhà riêng",

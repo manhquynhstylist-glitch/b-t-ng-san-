@@ -19,7 +19,7 @@ create table if not exists public.listings (
  owner_id uuid not null references auth.users(id) on delete cascade default auth.uid(),
  title text not null check(char_length(btrim(title)) between 10 and 140),
  purpose text not null default 'rent' check(purpose in ('rent','sale')),
- type text not null check(type in ('Mặt bằng','Căn hộ chung cư','Chung cư mini, căn hộ dịch vụ','Nhà riêng','Nhà biệt thự, liền kề','Nhà mặt phố')),
+ type text not null check(type in ('Mặt bằng kinh doanh','Sang nhượng cửa hàng kinh doanh','Mặt bằng văn phòng','Căn hộ chung cư','Chung cư mini, căn hộ dịch vụ','Nhà riêng','Nhà biệt thự, liền kề','Nhà mặt phố')),
  city text not null check(char_length(city) between 2 and 80),
  district text not null check(char_length(district) between 2 and 100),
  address text not null check(char_length(btrim(address)) between 5 and 180),
@@ -33,6 +33,10 @@ create table if not exists public.listings (
  status text not null default 'draft' check(status in ('draft','published','hidden')),
  created_at timestamptz not null default now(), updated_at timestamptz not null default now()
 );
+-- Keep existing listings compatible when upgrading from the original category name.
+alter table public.listings drop constraint if exists listings_type_check;
+update public.listings set type='Mặt bằng kinh doanh' where type='Mặt bằng';
+alter table public.listings add constraint listings_type_check check(type in ('Mặt bằng kinh doanh','Sang nhượng cửa hàng kinh doanh','Mặt bằng văn phòng','Căn hộ chung cư','Chung cư mini, căn hộ dịch vụ','Nhà riêng','Nhà biệt thự, liền kề','Nhà mặt phố'));
 create index if not exists listings_owner_idx on public.listings(owner_id);
 create index if not exists listings_public_idx on public.listings(status,purpose,created_at desc);
 alter table public.listings enable row level security;
